@@ -1,21 +1,59 @@
-Scheduling
+Scheduling Lab
 ===============
 *Operating Systems, Spring 2020*
 
 
 **Gayeon Park**
 
-***DISCLAIMER: I would like to make it clear that the following lab specifications are taken from the lab instructon distributed to our OS class by Professor Yan Shvartzshnaider. If you have any questions or want to see the original lab instructions, please refer to the [linked file.](https://github.com/gayeon97/Operating-Systems-Lab-03/blob/main/Banker_lab_original_instructions.pdf)***
+***DISCLAIMER: I would like to make it clear that the following lab specifications are taken from the lab instructon distributed to our OS class by Professor Yan Shvartzshnaider. If you have any questions or want to see the original lab instructions, please refer to the [linked file.](https://github.com/gayeon97/Operating-Systems-Lab-02/blob/main/Scheduling_lab_original_instructions.pdf)***
+
+----
+### Overview ###
 
 For this Java program, we are simulating scheduling to see how time requried for process is allocated, depending on the scheduling algorithm and the request patterns. 
 
+
 Here, a process is characterized by just four non-negative integers: A, B, C and M.
-A is the arrival time of the process. B is used for calculating the CPU Burst time for a process, using the randomOS(B) function. C is the total CPU time needed by the process. M is used for calculating the IO Burst time for a process.
+- A is the arrival time of the process. 
+- B is used for calculating the CPU Burst time for a process, using the randomOS(B) function. 
+- C is the total CPU time needed by the process. 
+- M is used for calculating the IO Burst time for a process.
+
 
 Using these four information about the process, we are trying to replicate how an operating system would schedule multiple processes to run in real life.
 
+----
+### Program Layout ###
+
+A process execution consists of computation alternating with I/O. We will refer to these as the **CPU bursts** and **I/O bursts** throughout the description.
 
 
+To calculate **CPU burst times**, following simplifying assumption is made:
+* For each process, the CPU burst times are uniformly distributed random integers (or UDRIs for short) in the interval **(0, B]**. 
+* To obtain a UDRI ***t*** in some interval **(0, U]**, the function randomOS(U) is used. 
+<details>  
+    <summary>Click to learn about the randomOS(U) function.</summary>
+
+* **randomOS(U)** is a simple function that reads a random non-negative integer X from a file named ***random-numbers*** (in the src directory) and returns the value 1 + (X mod U). 
+* ***random-numbers*** is the file supplied by the professor that contains a large number of random non-negative integers. The purpose of standardizing the random numbers is so that all correct programs will produce the same answers.
+</details>
+
+* So the next CPU burst is randomOS(B). If the value returned by randomOS(B), is larger than the total CPU time remaining, set the next CPU burst to the remaining time.
+
+
+The **I/O burst time** for a process is its preceding CPU burst time multiplied by M.
+
+
+You are to read a file describing n processes (i.e., n quadruples of numbers) and then simulate the n processes
+until they all terminate. The way to do this is to keep track of the state of each process (e.g., ready, running,
+blocked) and advance time, making any state transitions needed. At the end of the run you first print an
+identification of the run including the scheduling algorithm used, any parameters (e.g. the quantum for RR),
+and the number of processes simulated
+
+
+
+- - - -
+#### Instructions to run the code ####
 
 The Scheduling.java program reads its input from a file, whose name is given as a command line argument. The program send its output to the screen as System.out in Java.
 
