@@ -30,7 +30,7 @@ A process execution consists of computation alternating with I/O. We will refer 
 
 To calculate **CPU burst times**, following simplifying assumption is made:
 * For each process, the CPU burst times are uniformly distributed random integers (or UDRIs for short) in the interval **(0, B]**. 
-* To obtain a UDRI ***t*** in some interval **(0, U]**, the function randomOS(U) is used. 
+* To obtain a UDRI ***t*** in some interval **(0, U]**, the function **randomOS(U)(( is used. 
     * **randomOS(U)** is a simple function that reads a random non-negative integer X from a file named ***random-numbers*** (in the src directory) and returns the value 1 + (X mod U). 
     * ***random-numbers*** is the file supplied by the professor that contains a large number of random non-negative integers. The purpose of standardizing the random numbers is so that all correct programs will produce the same answers.
 * So the next CPU burst is randomOS(B). If the value returned by randomOS(B), is larger than the total CPU time remaining, set the next CPU burst to the remaining time.
