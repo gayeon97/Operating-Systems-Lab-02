@@ -152,7 +152,7 @@ Inside of the "src" folder, Scheduling.java file and Process.java files are loca
 
 As mentioned above, execute the Scheduling program using the input file name given as the command line argument. The program prints output to the screen as System.out in Java.
 
-**ONE IMPORTANT THING TO NOTE: the input files you are testing the Scheduling.java file against MUST be in the same folder as the Scheduling.java file (namely, the src folder).**
+***ONE IMPORTANT THING TO NOTE: the input files you are testing the Scheduling.java file against MUST be in the same folder as the Scheduling.java file (namely, the src folder).***
 
 ## Verbose Flag <a name="verbose"></a>
 The program accepts an optional "-verbose" flag. If present, it precedes the file name. When "-verbose" is given, the program produce detailed output that's helpful for debugging. 
