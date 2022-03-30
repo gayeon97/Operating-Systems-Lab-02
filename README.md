@@ -154,15 +154,6 @@ As mentioned above, execute the Scheduling program using the input file name giv
 
 **ONE IMPORTANT THING TO NOTE: the input files you are testing the Scheduling.java file against MUST be in the same folder as the Scheduling.java file (namely, the src folder).**
 
-
-To execute the program using the contents of a text file, please type the name of the java file (Scheduling), the name of any flag (-verbose or -show-random), if any, and the name of the input file. 
-
-Type the below instruction into the Terminal to compile the Scheduling.java program.
-When compiling, you have to make sure that you are compiling all the following files: 
-* **Scheduling.java** (the Scheduling program that simulates scheduling all the processes to the termination, depending on the different algorithms and the request patterns)
-* **Process.java** (instances of ***Process*** are created to store the information about processes we read from the input file. They are utilized by the Scheduling program.)
-
-
 ## Verbose Flag <a name="verbose"></a>
 The program accepts an optional "-verbose" flag. If present, it precedes the file name. When "-verbose" is given, the program produce detailed output that's helpful for debugging. 
 
@@ -174,6 +165,14 @@ Three possible invocations of the program are:
 <program-name> --verbose <input-filename>
 <program-name> --show-random <input-filename>
 ```
+
+Type the below instruction into the Terminal to compile the Scheduling.java program.
+When compiling, you have to make sure that you are compiling all the following files: 
+* **Scheduling.java** (the Scheduling program that simulates scheduling all the processes to the termination, depending on the different algorithms and the request patterns)
+* **Process.java** (instances of ***Process*** are created to store the information about processes we read from the input file. They are utilized by the Scheduling program.)
+
+***As this lab required that the scheduling processes for four different algorithms work and generate results for each, I have multiple smaller versions for each of the algorithm. This was done along the development process to avoid confusion or contaminating the working code. The two java programs that matter are "Scheduling.java" and "Process.java"".***
+
 
 - - - -
 ### Compiling
